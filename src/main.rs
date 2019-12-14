@@ -1,8 +1,15 @@
+use std::io;
 fn main() {
-    println!("{}", checkforarmstrong(9));
-    println!("{}", checkforarmstrong(10));
-    println!("{}", checkforarmstrong(153));
-    println!("{}", checkforarmstrong(154));
+    println!("Enter a number: ");
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Not a valid string");
+    let input_num: i32 = input.trim().parse().expect("Not a valid number");
+    
+    println!("{}", checkforarmstrong(input_num));
+//     println!("{}", checkforarmstrong(9));
+//     println!("{}", checkforarmstrong(10));
+//     println!("{}", checkforarmstrong(153));
+//     println!("{}", checkforarmstrong(154));
 } //numbers from gci task.
 
 fn checkforarmstrong(number: i32) -> bool {
